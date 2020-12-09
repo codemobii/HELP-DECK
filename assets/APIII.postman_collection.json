@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "ff78eb62-42cc-461d-8452-7d07a78c8cc2",
+		"name": "APIII",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Related",
+			"item": [
+				{
+					"name": "Send Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sender_id",
+									"value": "1",
+									"description": "Identification of user that's sending the message",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "2",
+									"description": "Identification of user that's receiving the message",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Hello There",
+									"description": "Message",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiurl}}/send_message",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"send_message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Send Message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "sender_id",
+											"value": "1",
+											"description": "Identification of user that's sending the message",
+											"type": "text"
+										},
+										{
+											"key": "receiver_id",
+											"value": "2",
+											"description": "Identification of user that's receiving the message",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "Hello There",
+											"description": "Message",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{apiurl}}/send_message",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"send_message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 08:40:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Message sent\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Fetch Chat Messages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"description": "User id",
+									"type": "text"
+								},
+								{
+									"key": "chat_id",
+									"value": "2",
+									"description": "Chat id (person user is chatting with)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiurl}}/fetch_chat_messages",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"fetch_chat_messages"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Fetch Chat Messages",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"description": "User id",
+											"type": "text"
+										},
+										{
+											"key": "chat_id",
+											"value": "2",
+											"description": "Chat id (person user is chatting with)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{apiurl}}/fetch_chat_messages",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"fetch_chat_messages"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 08:52:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"sender_id\": 1,\n            \"receiver_id\": 2,\n            \"message\": \"Hello There\",\n            \"time\": \"1602837658\",\n            \"seen\": 0,\n            \"time_formatted\": \"16 Oct 2020\",\n            \"time_ago\": \"11 minutes ago\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Send Report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "22",
+									"description": "User ID",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "24 April 2020",
+									"type": "text"
+								},
+								{
+									"key": "disability",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "what_happened",
+									"value": "I was just walking home",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "30 Anywhere street",
+									"type": "text"
+								},
+								{
+									"key": "story",
+									"value": "I was afraid as i was going home. Then something happenned",
+									"type": "text"
+								},
+								{
+									"key": "contact",
+									"value": "08000000000",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{apiurl}}/log-report",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"log-report"
+							]
+						},
+						"description": "Log a report"
+					},
+					"response": []
+				}
+			],
+			"description": "User related API endpoints",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Data",
+			"item": [
+				{
+					"name": "All Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/all-videos",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"all-videos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Videos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiurl}}/all-videos",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"all-videos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 09:00:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21910"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Fetch successful\",\n    \"data\": [\n        {\n            \"id\": 407,\n            \"video_title\": \"REAL HOUSE WIVES OF LAGOS -NIGERIAN 2018 LATEST MOVIES\",\n            \"video_desc\": \"NIGERIAN 2018 LATEST MOVIES - Nelly (Annie Idibia) is jealous of the life her friend has, she Blackmailed her into losing her relationship little did she know that karma will come calling. \\r\\nNIGERIAN 2018 LATEST MOVIES STARRING : ANNIE MACURLAY IDIBIA, PAT ATTANG , NOSA REX\\r\\n\\r\\n\\r\\n\\r\\nThanks for watching and always remember that we have hundreds of  NIGERIAN 2018 LATEST MOVIES latest full movies lined up for your enjoyment.\\r\\n\\r\\nYou can also share and like this interesting  NIGERIAN 2018 LATEST MOVIES African nollywood movies. Below are list of NIGERIAN 2018 LATEST MOVIES Playlist you will enjoy African movies online NIGERIAN 2018 LATEST MOVIES\\r\\n\\r\\n\\r\\nTRENDING NOW ON YOUTUBE: https://www.youtube.com/watch?v=zDrOiVm8qIg&amp;list=LLSGD7q5PeD-eK0Vy0FudNZA\\r\\n\\r\\n\\r\\nNIGERIAN 2018 LATEST MOVIES : https://www.youtube.com/playlist?list=PLTWuirfhchT48Lkuq-2ZA8lPIYgEbxwPG\\r\\n\\r\\n\\r\\nLATEST NIGERIAN MOVIES 2018 : https://www.youtube.com/playlist?list=PLTWuirfhchT6-90tGjOfmkBCj2RWiOuaR\\r\\n\\r\\n\\r\\nLATEST MOVIES 2018 : https://www.youtube.com/playlist?list=PLTWuirfhchT66HRnkdtnYYSrUAjjlnmxH\\r\\n\\r\\nCHANNEL URL : https://www.youtube.com/channel/UCSGD7q5PeD-eK0Vy0FudNZA\\r\\n\\r\\nNIGERIAN 2018 LATEST MOVIES IS BROUGHT TO YOU BY NOLLYWOOD BLOCK BUSTER CHANNEL AND POWERED BY AFOREVO\",\n            \"video_category\": 6,\n            \"video_link\": \"https://www.youtube.com/watch?v=IHQYJGHLHqM\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595508615\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"Nollywood Movies\",\n                \"category_slug\": \"nolly-movies\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/407\"\n        },\n        {\n            \"id\": 380,\n            \"video_title\": \"Jenifa's Diary S7EP12 - Fast Finger | (JENIFA In LONDON)\",\n            \"video_desc\": \"Adaku bites the finger that feeds her, she leaves Jenifa to be with Winston.\\r\\nEsther's bad habits becomes worse by the day.\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season20\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=lzf0nAiRcFU&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=12\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507403\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/380\"\n        },\n        {\n            \"id\": 379,\n            \"video_title\": \"Jenifa's Diary S7EP11 - CAUGHT IN THE ACT | (JENIFA In LONDON)\",\n            \"video_desc\": \"Jenifa tries to have fun for once but it didnt turn out well as she finds herself in the middle of nowhere.\\r\\n\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season20\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=8PhvW22Xs4g&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=11\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507375\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/379\"\n        },\n        {\n            \"id\": 378,\n            \"video_title\": \"Jenifa's diary S7EP10- FREEDOM | (JENIFA In LONDON )\",\n            \"video_desc\": \"Pelumi is being over protective of her sister after realizing that the apple doesn't fall far from the tree. \\r\\n\\r\\n\\r\\n\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season19\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=R8t8-X18GmM&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=10\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507350\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/378\"\n        },\n        {\n            \"id\": 377,\n            \"video_title\": \"Jenifa&amp;rsquo;s diary S7EP9 - Survival | (Jenifa In London )\",\n            \"video_desc\": \"Adaku is not taking it likely with the person who plotted to take them down.\\r\\nShe's also refused to save for the rainy days.\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season19\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=ziUVz7qOlpE&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=9\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507319\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/377\"\n        },\n        {\n            \"id\": 376,\n            \"video_title\": \"Jenifa's Diary S7EP8 - THE SCAM | (Jenifa In London )\",\n            \"video_desc\": \"Jenifa and Adaku ventures into their own business which didn't turn out well after someone unexpected\\r\\ntried to bring them down.\\r\\nWho could that be ?\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season19\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=bMZQ3BUqOv4&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=8\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507289\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/376\"\n        },\n        {\n            \"id\": 375,\n            \"video_title\": \"Jenifa's Diary S7EP7 - Lost And Found | Jenifa In London\",\n            \"video_desc\": \"Lady Tina finally arrested but jenifa and Adaku are yet to retrieve their passports from her.\\r\\n\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season19\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=9GNzawG0Uk8&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=7\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507258\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/375\"\n        },\n        {\n            \"id\": 374,\n            \"video_title\": \"Jenifa's diary S7EP6- CLEANING JOB (Jenifa In London) | Jenifa, Adaku, Toyosi, Pelumi\",\n            \"video_desc\": \"Adaku's bad habit increases by the day as she exhibits laziness at her new job. Jenifa has her eyes on someone new.\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season19\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=qFjjtilxN3U&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=6\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507226\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/374\"\n        },\n        {\n            \"id\": 373,\n            \"video_title\": \"jenifa's diary S7EP5 - HOPE AGAIN (JENIFA In London )\",\n            \"video_desc\": \"Toyosi finally put a smile on Jenifa's and Adaku's faces after several disappointment from their mischievous helper.\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season19\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=poz39_pq3dE&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=5\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507197\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/373\"\n        },\n        {\n            \"id\": 372,\n            \"video_title\": \"Jenifas diary S7EP4 -ENTRAPPED (JENIFA In London )\",\n            \"video_desc\": \"James finds out a shocking truth about his soon to be wife.\\r\\nWill he call off their relationship or practice for better worse before the marriage.\\r\\n-----------------------------------------------------------------------------------------------\\r\\n#FunkeAkindele #Jenifasdiary #Season19\\r\\nWATCH LATEST NOLLYWOOD MOVIES &amp; TV SERIES: https://goo.gl/YjZ1D8\\r\\nWATCH FULL EPISODES OF JENIFA'S DIARY: https://goo.gl/YjZ1D8\\r\\n\\r\\nClick to Subscribe: https://goo.gl/YjZ1D8 \\r\\nDownload SceneOneTV App for Android user: https://play.google.com/store/apps/details?id=com.sceneonetvapp\\r\\n\\r\\n Or \\r\\n\\r\\nApp store: https://itunes.apple.com/ng/app/sceneonetv/id1181877249?mt=8\\r\\n\\r\\nWATCH FULL VIDEO NOW: https://goo.gl/YjZ1D8\\r\\n\\r\\nWatch Full videos of Jenifa's diary and Industreet:  https://goo.gl/YjZ1D8 \\r\\n\\r\\nWatch latest nollywood movies and series on the go!!! download SCENEONE TV App on Google Play Store or App Store (iOS). chat us on WhatsApp (+2348090717512 or +2348036334229)\\r\\n------------------------------------------------------------------------------------------------\\r\\nPlease visit http://sceneone.tv to watch the hottest Nigerian movies and subscribe to our youtube channel https://www.youtube.com/SceneOneTV today and enjoy the latest Nigerian &amp; African movies, Yoruba movies, Hausa movies, Ibo Movies on all your devices. \\r\\n Subscribe: https://www.youtube.com/SceneOneTV\\r\\n--------------------------------------------------------------------\\r\\nFollow us:\\r\\nTwitter:  https://goo.gl/o5Y8aN\\r\\nFacebook: https://goo.gl/XYC5xh\\r\\nInstagram: https://goo.gl/TCcNg8\\r\\n------------------------------------------------------------------------\\r\\nYou can call/chat us on WhatsApp (+2348090717512 or +2348036334229).\",\n            \"video_category\": 7,\n            \"video_link\": \"https://www.youtube.com/watch?v=PBcnzm00Y4I&amp;amp;list=PLckc9lBUmFj8DKjnhWjUi84e8IWcrx-NV&amp;amp;index=4\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595507142\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"Nollywood Series\",\n                \"category_slug\": \"nolly-series\"\n            },\n            \"formatted_date\": \"23 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/372\"\n        }\n    ],\n    \"results_count\": 10,\n    \"next_page\": 2,\n    \"next_page_url\": \"https://localhost/v1/all-videos?page=2\",\n    \"previous_page\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Single Video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/video/{video_id}",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"video",
+								"{video_id}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Single Video",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiurl}}/video/407",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"video",
+										"407"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 09:00:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1769"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Video details fetch successful\",\n    \"data\": {\n        \"id\": 407,\n        \"video_title\": \"REAL HOUSE WIVES OF LAGOS -NIGERIAN 2018 LATEST MOVIES\",\n        \"video_desc\": \"NIGERIAN 2018 LATEST MOVIES - Nelly (Annie Idibia) is jealous of the life her friend has, she Blackmailed her into losing her relationship little did she know that karma will come calling. \\r\\nNIGERIAN 2018 LATEST MOVIES STARRING : ANNIE MACURLAY IDIBIA, PAT ATTANG , NOSA REX\\r\\n\\r\\n\\r\\n\\r\\nThanks for watching and always remember that we have hundreds of  NIGERIAN 2018 LATEST MOVIES latest full movies lined up for your enjoyment.\\r\\n\\r\\nYou can also share and like this interesting  NIGERIAN 2018 LATEST MOVIES African nollywood movies. Below are list of NIGERIAN 2018 LATEST MOVIES Playlist you will enjoy African movies online NIGERIAN 2018 LATEST MOVIES\\r\\n\\r\\n\\r\\nTRENDING NOW ON YOUTUBE: https://www.youtube.com/watch?v=zDrOiVm8qIg&amp;list=LLSGD7q5PeD-eK0Vy0FudNZA\\r\\n\\r\\n\\r\\nNIGERIAN 2018 LATEST MOVIES : https://www.youtube.com/playlist?list=PLTWuirfhchT48Lkuq-2ZA8lPIYgEbxwPG\\r\\n\\r\\n\\r\\nLATEST NIGERIAN MOVIES 2018 : https://www.youtube.com/playlist?list=PLTWuirfhchT6-90tGjOfmkBCj2RWiOuaR\\r\\n\\r\\n\\r\\nLATEST MOVIES 2018 : https://www.youtube.com/playlist?list=PLTWuirfhchT66HRnkdtnYYSrUAjjlnmxH\\r\\n\\r\\nCHANNEL URL : https://www.youtube.com/channel/UCSGD7q5PeD-eK0Vy0FudNZA\\r\\n\\r\\nNIGERIAN 2018 LATEST MOVIES IS BROUGHT TO YOU BY NOLLYWOOD BLOCK BUSTER CHANNEL AND POWERED BY AFOREVO\",\n        \"video_category\": 6,\n        \"video_link\": \"https://www.youtube.com/watch?v=IHQYJGHLHqM\",\n        \"video_author\": \"youtube\",\n        \"upload_date\": \"1595508615\",\n        \"category\": {\n            \"id\": 6,\n            \"category_name\": \"Nollywood Movies\",\n            \"category_slug\": \"nolly-movies\"\n        },\n        \"formatted_date\": \"23 Jul 2020\",\n        \"link\": \"https://localhost/v1/video/407\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/all-categories",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"all-categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiurl}}/all-categories",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"all-categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 09:02:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "601"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Fetch successful\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"category_name\": \"Movies\",\n            \"category_slug\": \"movies\"\n        },\n        {\n            \"id\": 2,\n            \"category_name\": \"Tv Series\",\n            \"category_slug\": \"tv-series\"\n        },\n        {\n            \"id\": 3,\n            \"category_name\": \"Cartoons\",\n            \"category_slug\": \"cartoons\"\n        },\n        {\n            \"id\": 4,\n            \"category_name\": \"E-Learning\",\n            \"category_slug\": \"e-learning\"\n        },\n        {\n            \"id\": 5,\n            \"category_name\": \"Entertainment\",\n            \"category_slug\": \"entertainment\"\n        },\n        {\n            \"id\": 6,\n            \"category_name\": \"Nollywood Movies\",\n            \"category_slug\": \"nolly-movies\"\n        },\n        {\n            \"id\": 7,\n            \"category_name\": \"Nollywood Series\",\n            \"category_slug\": \"nolly-series\"\n        },\n        {\n            \"id\": 8,\n            \"category_name\": \"Wrestling (WWE)\",\n            \"category_slug\": \"wrestling\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Single Category Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/cat-videos/{category_id}",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"cat-videos",
+								"{category_id}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Single Category Videos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiurl}}/cat-videos/4",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"cat-videos",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 09:03:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30817"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Data fetch successful\",\n    \"data\": [\n        {\n            \"id\": 291,\n            \"video_title\": \"Learn Swift Fast (2020) - Full Course For Beginners\",\n            \"video_desc\": \"If you want to learn swift fast, this is the course for you! Learn Swift programming with this 3 hour course that will take you from beginner to a solid understanding of how to program in Swift!\\r\\n\\r\\nThis Swift tutorial is perfect even for beginners with no programming experience! You'll be taken through the basics and build up skills layer by layer.\\r\\n\\r\\n𝗖𝗵𝗮𝗽𝘁𝗲𝗿𝘀 &amp; 𝗧𝗶𝗺𝗲𝘀𝘁𝗮𝗺𝗽𝘀 (Thank you Matthias Hersche)\\r\\n0:20 Lesson 1:  Start Here\\r\\n21:50 Lesson 2: Data Types\\r\\n29:50 Lesson 3: If Statements\\r\\n46:04 Lesson 4: Switch Statements\\r\\n53:17 Lesson 5: Loops (Part 1)\\r\\n1:03:19 Lesson 6: Loops (Part 2)\\r\\n1:11:50 Lesson 7: Functions (Part 1)\\r\\n1:19:16 Lesson 8: Functions (Part 2)\\r\\n1:32:02 Lesson 9: Classes\\r\\n1:42:28 Lesson 10: Classes Inheritance\\r\\n1:51:34 Lesson 11: UI Kit\\r\\n1:57:08 Lesson 12: Initializers\\r\\n2:06:23 Lesson 13: Optionals\\r\\n2:27:59 Lesson 14: Properties\\r\\n2:34:42 Lesson 15: Designated &amp; Convenience Initializers\\r\\n2:42:42 Lesson 16: Arrays\\r\\n2:58:38 Lesson 17: Dictionaries\\r\\n\\r\\n\\r\\n\\r\\nThis Swift course also comes with notes, cheatsheets, exercises and solutions which you can download here:\\r\\nhttps://codewithchris.com/swift-tutorial-resources/\\r\\n\\r\\nThis course will teach you using Swift 5 and the latest version of Xcode.\\r\\n\\r\\nSUBSCRIBE TO MY CHANNEL ► http://bit.ly/2re4GH0\\r\\n \\r\\n_________________&nbsp;\\r\\nFREE RESOURCES (download links)\\r\\n\\r\\nResources, Code, Bonus Videos and Recap Notes:\\r\\n📓 https://codewithchris.com/swift-tutorial-resources/\\r\\n\\r\\nTo get started with developing your own app, join my free 7 Day App Action Plan and I'll help you put together a game plan in just ONE WEEK!!\\r\\n⚡ https://codewithchris.com/actionplan\\r\\n\\r\\nLearn together in our CWC Community:\\r\\n👩&zwj;💻 https://codewithchris.com/community\\r\\n \\r\\nMy guide for Xcode on Windows:\\r\\n💻  http://bit.ly/2jrfehL\\r\\n\\r\\n📝 Swift Syntax Cheat Sheet ► http://bit.ly/2jmQGq1 \\r\\n\\r\\n_________________&nbsp;\\r\\nMY iOS FUNDAMENTALS COURSE\\r\\n \\r\\nLearn More ► http://bit.ly/2JSeOMG\\r\\n Volume licensing inquires? Just contact us at:\\r\\nhttps://codewithchris.com/contact/\\r\\n\\r\\n_________________\\r\\nCONNECT WITH ME\\r\\n \\r\\nFor more tutorials on how to build iPhone apps, make sure you join and visit my site where you'll find a community of like minded learners!  Learning something new is always more fun with other people!\\r\\nWebsite ► https://codewithchris.com/\\r\\nFacebook Group ► https://www.facebook.com/groups/codewithchriscommunity/\\r\\nReddit ► https://www.reddit.com/r/CodeWithChris\\r\\n \\r\\n_________________\\r\\nFOLLOW ME\\r\\n \\r\\nTwitter ► @CodeWithChris\\r\\nInstagram ► @CodeWithChris\\r\\n \\r\\n_________________\\r\\nABOUT ME\\r\\n \\r\\nHi I&rsquo;m Chris!  I&rsquo;m dedicated to teaching fundamentals about how to make an app.  This is important if you&rsquo;re trying to land an iOS job, be a freelancer, increase or start a business with an app idea.  On the site, you'll find a ton of free resources and tutorials to aid you on your journey to learn iOS development. Many people have successfully picked up Swift 4, Xcode 10 and app building from my course and materials!\\r\\n \\r\\nNeed motivation?\\r\\nHere's just a sample of the success stories my students have sent in:\\r\\n👩&zwj;💻 https://codewithchris.com/success-stories/?utm_source=youtube&amp;utm_medium=desc&amp;utm_campaign=swiftcourse\\r\\n\\r\\n\\r\\n#LearnSwift #SwiftTutorial #CodeWithChris\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=FcsY1YPBwzQ\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431464\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/291\"\n        },\n        {\n            \"id\": 290,\n            \"video_title\": \"Swift Tutorial - Full Course for Beginners\",\n            \"video_desc\": \"Learn how to code with Swift in this full tutorial course for beginners. Swift is a powerful and intuitive programming language for macOS, iOS, watchOS and tvOS.\\r\\n\\r\\nThis course covers all the core concepts of Swift including:\\r\\nVariables and Constants, Data Types, Properties, Functions and Parameters, Classes, IF Statements, and more.\\r\\n\\r\\nCourse from Code With Chris. Check out their YouTube channel: https://www.youtube.com/user/codewithchris\\r\\n\\r\\nThe Code With Chris Facebook community: https://www.facebook.com/groups/codewithchriscommunity/\\r\\n\\r\\n--\\r\\n\\r\\nLearn to code for free and get a developer job: https://www.freecodecamp.org\\r\\n\\r\\nRead hundreds of articles on programming: https://medium.freecodecamp.org\\r\\n\\r\\nAnd subscribe for new videos on technology every day: https://youtube.com/subscription_center?add_user=freecodecamp\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=comQ1-x2a1Q\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431427\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/290\"\n        },\n        {\n            \"id\": 289,\n            \"video_title\": \"How to Make An iOS APP | App Development Tutorial | Udemy instructor, Angela Yu\",\n            \"video_desc\": \"In this video, How to Make An iOS APP | App Development Tutorial - Udemy instructor Angela Yu will show you how To Make an iPhone App with No Programming Experience.\\r\\n\\r\\nExplore the full course on Udemy (special discount included in the link): https://bit.ly/2F7jTl0\\r\\n\\r\\nWant to learn how code and make apps for iOS? \\r\\n\\r\\nWe have made these video tutorials just for you. The best part? You do not need any programming experience. All you need is Xcode and a keen mind. We will take you through how to develop apps step-by-step. We will walk through the whole process of app programming from beginning to end.\\r\\n\\r\\nWe are the fastest way for people with no programming experience to learn how to code and how to make apps. Love playing with iPhone and iPad apps? Why not learn how to create them too? Do you want to quit your job and become an app developer? We are here for you. Do you want to make your own games? We are here for you! \\r\\n\\r\\nUpdated to the latest version of Xcode (Xcode 9) for making apps using Swift 4 for iOS11.\\r\\n\\r\\nCourse Description:\\r\\nWelcome to the Complete iOS App Development Bootcamp. With over 15,000 ratings and a 4.8 average this is the HIGHEST RATED iOS Course of all time! \\r\\n\\r\\nThis Swift 4 course is based on our in-person app development bootcamp in London. We've perfected the curriculum over 3 years of in-person teaching. \\r\\n\\r\\nOur complete app development bootcamp teaches you how to code using Swift 4 and build beautiful iOS 11 apps for iPhone and iPad. Even if you have ZERO programming experience.\\r\\n\\r\\nWe'll take you step-by-step through engaging video tutorials and teach you everything you need to know to succeed as an iOS app developer.\\r\\n\\r\\nThe course includes over hours and hours of HD video tutorials and builds your programming knowledge through making real world apps. e.g. Pokemon Go, Whatsapp, QuizUp and Yahoo Weather.\\r\\n\\r\\nIt's updated to include over 5 hours of content on Apple's brand new ARKit for making Augmented Reality apps and CoreML for making intelligent apps with Machine Learning. You'll be building image recognition apps and incredible 3D animated AR apps.\\r\\n\\r\\nBy the end of this course, you will be fluently programming in Swift 4 and be ready to make your own apps or start a freelancing job as an iOS 11 developer.\\r\\n\\r\\nYou'll also have a portfolio of over 20 apps that you can show off to any potential employer.\\r\\n\\r\\nSign up today, and look forward to:\\r\\n\\r\\n- Over 50 hours of HD 1080p video content\\r\\n- Building over 20 fully-fledged including ones that use Firebase, machine learning and augmented reality\\r\\n- All the knowledge you need to start building any app you want\\r\\n- Thousands of dollars worth of design assets\\r\\n- Our best selling 12 Rules to Learn to Code eBook\\r\\n- $8000+ app development bootcamp course materials and curriculum\\r\\n- From beginner to iOS 11 app developer with just one course\\r\\n\\r\\nWe know that you're here because you value your time. If you wanted to watch someone program for hours and hours without explaining what they're doing, you'd be on YouTube. \\r\\n\\r\\nBy getting this course, you can be rest assured that the course is carefully thought out and edited. There are beautiful animations that explain all the difficult concepts and we're always on hand to answer student questions.\\r\\n\\r\\nSo by the end of the course, you'll completely understand:\\r\\n\\r\\n- Concepts of Object Oriented Programming (OOP): The type system, variables, functions and methods, inheritance, classes and protocols.\\r\\n- Control Structures: Using If/&shy;Else clauses, Switch statements and logic to control the flow of execution.\\r\\n- Data Structures: How to work with collections, such as arrays and dictionaries.\\r\\n- Software Design: How to organize and format code for readability and how to implement the Model &shy;View&shy; Controller (MVC) design pattern.\\r\\n- Networking: How to make asynchronous API calls, store and retrieve data from the cloud, and use the JSON format for server communication.\\r\\n- Machine Learning: How to make artificially intelligent apps using iOS 11's new CoreML framework.\\r\\n- Augmented Reality: How to create 3D objects in augmented reality and create incredible animations and real-life interactions using -Apple's latest ARKit framework.\\r\\n- Core Data, Realm and other forms of persistent data storage.\\r\\n\\r\\n#Udemy\\r\\n#BeAble\\r\\n\\r\\nShare your story with #BeAble\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=ALSe4P89nEc\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431377\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/289\"\n        },\n        {\n            \"id\": 288,\n            \"video_title\": \"iOS Tutorial (2020): How To Make Your First App\",\n            \"video_desc\": \"In this iOS tutorial, you'll learn how to get set up for iOS app development, how to use the tools required and how to write/read Swift code so that you can build your own app! By the end of this iOS development tutorial, you'll have built your first fully functional app!\\r\\n\\r\\nNote: Missing your main.storyboard file? Check out this video for the fix:\\r\\nhttps://youtu.be/ea9fCSXGhSU\\r\\n\\r\\nThis video series uses the latest and greatest from Apple (Xcode 10, Swift 5, iOS 12) and will teach a beginner with no programming experience how to make iPhone apps. I'm creating these videos with the assumption that the student has no prior knowledge and is starting from scratch.\\r\\n_________________________________________\\r\\n\\r\\n𝗖𝗵𝗮𝗽𝘁𝗲𝗿𝘀 𝗧𝗶𝗺𝗲 𝗦𝘁𝗮𝗺𝗽𝘀:\\r\\nChapter 1 - Xcode: 00:00:00\\r\\nChapter 2 - Auto Layout: 00:15:50\\r\\nChapter 3 - Stack Views: 00:47:12\\r\\nChapter 4 - First User Interface: 01:02:11\\r\\nChapter 5 - Swift Basics (I): 01:32:55\\r\\nChapter 6 - Swift Basics (II): 01:52:55\\r\\nChapter 7 - Swift Basics (III): 02:15:08\\r\\nChapter 8 - Connect Elements: 02:32:48\\r\\nChapter 9 - User Interactions: 02:55:35\\r\\nChapter 10 - Coding Logic: 03:06:45\\r\\n\\r\\nSUBSCRIBE TO MY CHANNEL ► http://bit.ly/2re4GH0\\r\\n \\r\\n_________________&nbsp;\\r\\nFREE RESOURCES (download links)\\r\\n\\r\\nResources, Code, Bonus Videos and Recap Notes:\\r\\n📓 https://codewithchris.com/beginner-youtube/\\r\\n\\r\\nALL my recording equipment and recommended books:\\r\\n📚https://www.amazon.com/shop/codewithchris\\r\\n\\r\\nTo get started with developing your own app, join my free 7 Day App Action Plan and I'll help you put together a game plan in just ONE WEEK!!\\r\\n⚡ https://codewithchris.com/actionplan\\r\\n\\r\\nLearn together in our CWC Community:\\r\\n👩&zwj;💻 https://codewithchris.com/community\\r\\n \\r\\nMy guide for Xcode on Windows:\\r\\n💻  http://bit.ly/2jrfehL\\r\\n\\r\\n📝 Swift Syntax Cheat Sheet ► http://bit.ly/2jmQGq1 \\r\\n\\r\\n_________________&nbsp;\\r\\nMY iOS FUNDAMENTALS COURSE\\r\\n \\r\\nLearn More ► http://bit.ly/2JSeOMG\\r\\n Volume licensing inquires? Just contact us at:\\r\\nhttps://codewithchris.com/contact/\\r\\n\\r\\n_________________\\r\\nCONNECT WITH ME\\r\\n \\r\\nFor more tutorials on how to build iPhone apps, make sure you join and visit my site where you'll find a community of like minded learners!  Learning something new is always more fun with other people!\\r\\nWebsite ► https://codewithchris.com/\\r\\nFacebook Group ► https://www.facebook.com/groups/codewithchriscommunity/\\r\\nReddit ► https://www.reddit.com/r/CodeWithChris\\r\\n \\r\\n_________________\\r\\nFOLLOW ME\\r\\n \\r\\nTwitter ► @CodeWithChris\\r\\nInstagram ► @CodeWithChris\\r\\n \\r\\n_________________\\r\\nABOUT ME\\r\\n \\r\\nHi I&rsquo;m Chris!  I&rsquo;m dedicated to teaching fundamentals about how to make an app.  This is important if you&rsquo;re trying to land an iOS job, be a freelancer, increase or start a business with an app idea.  On the site, you'll find a ton of free resources and tutorials to aid you on your journey to learn iOS development. Many people have successfully picked up Swift 4, Xcode 10 and app building from my course and materials!\\r\\n \\r\\nNeed motivation?\\r\\nHere's just a sample of the success stories my students have sent in:\\r\\n👩&zwj;💻 https://codewithchris.com/success-stories/?utm_source=youtube&amp;utm_medium=desc&amp;utm_campaign=lesson1\\r\\n\\r\\n\\r\\n#CodeWithChris #HowToMakeAnApp #Swift\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=09TeUXjzpKs\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431321\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/288\"\n        },\n        {\n            \"id\": 287,\n            \"video_title\": \"Swift Tutorial For Beginners [Full Course] Learn Swift For iOS Development\",\n            \"video_desc\": \"How to make 120K as an iOS developer Free Training:\\r\\nhttps://bit.ly/2QM4mMl\\r\\n\\r\\nSwift tutorial for beginners - learn Swift for iOS app development.\\r\\n\\r\\nTABLE OF CONTENTS\\r\\n00:00:33 - Installing Xcode\\r\\n00:02:23 - Hello, Swift!\\r\\n00:05:00 - Swift Variables\\r\\n00:10:15 - Swift Strings\\r\\n00:18:13 - Swift Numbers\\r\\n00:33:10 - Swift Booleans &amp; Conditional Logic\\r\\n00:54:08 - Swift Constants &amp; Logical Operators\\r\\n01:04:35 - Swift Arrays\\r\\n01:17:42 - Swift Loops\\r\\n01:36:41 - Swift Dictionaries\\r\\n01:55:25 - Swift Optionals\\r\\n02:14:59 - Object-oriented Programming in Swift\\r\\n02:27:00 - Swift Inheritance\\r\\n02:35:20 - Swift Polymorphism\\r\\n02:43:42 - Swift Enums\\r\\n03:03:29 - Swift Extensions Part 1\\r\\n03:18:52 - Swift Extensions Part 2\\r\\n03:39:25 - Swift Protocols &amp; Delegates Part 1\\r\\n03:52:30 - Swift Protocols &amp; Delegates Question Generator\\r\\n04:10:01 - Swift Protocols &amp; Delegates Magic App Part 1\\r\\n04:26:30 - Swift Protocols &amp; Delegates Magic App Part 2\\r\\n04:42:36 - Swift Mutating Functions\\r\\n05:00:39 - Swift Transformations\\r\\n\\r\\nIn this free full course on Swift you'll learn all of the basics of the Swift programming language. After taking this course you'll be able to start learning iOS development and build your very own apps.\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=mhE-Mp07RTo\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431284\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/287\"\n        },\n        {\n            \"id\": 286,\n            \"video_title\": \"Learn How to Build an Android 10 App - Using Kotlin - Development Masterclass 7+ hours FREE Course\",\n            \"video_desc\": \"Get the full course with 45 hours of High-Quality content and become a real Android App Developer here with a 90% Discount:\\r\\nhttps://bit.ly/33STuld\\r\\n\\r\\ntutorialsEU offers you free video tutorials about programming and development for complete beginners up to experienced programmers. \\r\\n\\r\\nStay tuned and subscribe to tutorialsEU: https://goo.gl/rBFh3x\\r\\n\\r\\n#Android10 #Kotlin #MobileDevelopment #AppDevelopment\\r\\n#BuildAnApp\\r\\n\\r\\nIn this Android and Kotlin App Development Masterclass Course, you will learn how to build Android Apps with Kotlin, the programming language chosen by google to be used for Android native apps, going forward.\\r\\n\\r\\nYou will be able to build your own Android apps after this tutorial.\\r\\nLearn everything you need to know about Android App Development with Kotlin. \\r\\nYou are going to learn all the fundamentals of Kotlin required, in order to get started with building amazing apps. \\r\\nBefore we can do so, we, of course, need to set up Android Studio and our AVD (Android Virtual Device)\\r\\nOnce you are done with the basics, we will start building real applications. \\r\\n\\r\\nIn this Android 10 and Kotlin App Development Masterclass you will learn how to build two apps. An &ldquo;age in minutes&rdquo; and a calculator app. By doing so, you will learn the fundamentals of how Android App development works. How to create your first app. How to run it on your phone and much more.\\r\\nSo you learn all the basics, but also build some cool android beginner projects.\\r\\nThis video is ideal for Android programming beginners. As you will start with setting up Android Studio and build the programs from scratch.\\r\\nOf course, you will also see how to setup your Android Emulator, to run the apps you will program on your PC, without needing an Android phone for testing.\\r\\nThis is ideal if you are interested in any type of programming. As we are going to dive into Kotlin. Kotlin is a fresh programming language which grows constantly in popularity.\\r\\nAndroid Apps can be developed with Java and Kotlin. Recently Google has decided to focus on Kotlin though, as Java is owned by one of their Competitors (Oracle).\\r\\nFunnily enough, I have worked for Oracle in the past ;)\\r\\n\\r\\nSo if you want to get started as an Android programmer and get a job in this field, then doing as many projects as possible is a great idea. Specifically, Android projects, as it is easy to publish them, and build your own portfolio.\\r\\nI'm really hyped to have you watch this Android Tutorial.\\r\\n\\r\\nI have a bunch of other courses and tutorials. You can check them out on my channel but also on my website. https://tutorials.eu where we are posting blog posts regularly. Including a bunch of interesting topics in the Android App Development space.\\r\\n\\r\\nYou can find the code here:\\r\\nhttps://drive.google.com/open?id=13tqxBtSP98nZAUdV16iwRWYdyU7_p2zT\\r\\n\\r\\nChapters:\\r\\n0:01:10 - Installing Android Studio\\r\\n0:05:47 - Our First Project - The UI and how to change it\\r\\n0:15:08 - Setting up the AVD (Android Virtual Device)\\r\\n0:24:22 - Starting our first app\\r\\n0:33:04 - Our First App - People Counter App\\r\\n0:49:05 - Testing on our phone\\r\\n0:54:49 - Outro for this chapter\\r\\n0:55:42 - Intro - Fundamentals Chapter\\r\\n0:57:08 - Basic Concepts of OOP Languages\\r\\n1:03:13 - Val vs Var\\r\\n1:11:07 - Datatypes of Numbers\\r\\n1:19:57 - Datatypes bool, char and string\\r\\n1:26:41 - Arythmetic operators\\r\\n1:35:24 - Comparison operators and string interpolation\\r\\n1:43:51 - assignment operators\\r\\n1:50:24 - If Statements\\r\\n2:02:45 - If Statements part 2\\r\\n2:06:28 - When Expressions\\r\\n2:18:58 - While Loops\\r\\n2:26:33 - Do While Loops\\r\\n2:29:51 - Another way to use while loops\\r\\n2:33:32 - For Loops\\r\\n2:38:44 - Functions - Parameters and arguments\\r\\n2:52:00 - Nullables in Kotlin\\r\\n3:02:01 - Nullables - elvis operator\\r\\n3:07:26 - Outro Basics 1\\r\\n3:08:57 - Intro Basics of OOP\\r\\n3:10:21 - Classes and Objects\\r\\n3:15:11 - Classes and Initializers\\r\\n3:22:16 - Scope and Shadowing\\r\\n3:27:32 - Member Variables, Functions and Constructors\\r\\n3:42:00 - Lateinit - Setters and Getters\\r\\n3:50:57 - Data Classes\\r\\n4:00:37 - Inheritance\\r\\n4:15:53 - Interfaces\\r\\n4:27:07 - Abstract Classes\\r\\n4:33:07 - Typecasting\\r\\n4:40:55 - Outro OOP\\r\\n4:42:19 - Intro more on Kotlin Basics\\r\\n4:43:51 - Arraylists\\r\\n4:49:37 - Lambda expressions\\r\\n4:54:11 - Visibility modifiers\\r\\n5:05:06 - Nested and Inner Classes\\r\\n5:09:54 - Safe Casting\\r\\n5:14:59 - Exception Handling with try and catch\\r\\n5:30:35 - Outro More Basics\\r\\n5:32:08 - Intro Age in Minutes App\\r\\n5:33:39 - Setting up the UI for the App\\r\\n5:48:22 - Difference of SP, DP Px\\r\\n6:03:45 - Finalizing the UI\\r\\n6:08:51 - Adding a DatePickerDialog and OnDateSetListener\\r\\n6:22:13 - Using the selected Date to Display it\\r\\n6:33:30 - Outro Age in Minutes\\r\\n6:34:46 - Intro Calculator App\\r\\n6:40:46 - Building the UI\\r\\n6:55:34 - Using onClick and implementing the CLR\\r\\n7:01:33 - Adding the onDecimalPoint\\r\\n7:06:41 - Adding the onOperatorFunctionality\\r\\n7:14:47 - Adding Subtraction - using substring and other string methods\\r\\n7:27:47 - adding the missing operations \\r\\n7:38:04 - Outro\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=uRyvNKRkwbs\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431236\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/286\"\n        },\n        {\n            \"id\": 285,\n            \"video_title\": \"Kotlin vs Java | Java or Kotlin for Android Development | Kotlin Tutorial | Edureka\",\n            \"video_desc\": \"**Edureka Online Courses: https://www.edureka.co **  \\r\\nThis Edureka &quot;Kotlin vs Java&quot; video will help you point out the major differences between two Android Development languages - Kotlin and Java. Below are the topics covered in this Kotlin vs Java video:\\r\\n1:17 What is Kotlin?\\r\\n3:24 What is Java?\\r\\n5:30 Parameters to compare\\r\\n7:27 Drawbacks of Java\\r\\n8:26 Advantages of Java over Kotlin\\r\\n9:25 Is Kotlin going to replace Java?\\r\\n\\r\\nSubscribe to our Edureka YouTube channel to get video updates everyday: http://bit.ly/2CUKdiI\\r\\n\\r\\n#edureka #KotlinvsJava #EdurekaKotlin #KotlinTraining #JavavsKotlin #KotlinvsJavaTutorial#KotlinTutorialForBeginners \\r\\n\\r\\n-----------------------------------------------------------------\\r\\n\\r\\nFor Online Training and Certification, Please write back to us at sales@edureka.in or call us at IND: 9606058406 / US: 18338555775 (toll free) for more information.\\r\\n\\r\\nFacebook: https://www.facebook.com/edurekaIN/\\r\\nTwitter: https://twitter.com/edurekain\\r\\nLinkedIn: https://www.linkedin.com/company/edureka\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=eVLPnewCMRI\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431139\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/285\"\n        },\n        {\n            \"id\": 284,\n            \"video_title\": \"Kotlin Full Course - Learn Kotlin in 4 Hours | Kotlin Tutorial | Kotlin Android Tutorial | Edureka\",\n            \"video_desc\": \"** Edureka Online Courses: https://www.edureka.co ** \\r\\nThis Edureka Kotlin Full Course video will help you understand and learn Kotlin programming language from scratch. This Kotlin Tutorial is ideal for both beginners as well as professionals. Below are the topics covered in this Kotlin Android Tutorial :\\r\\n2:16 History of Kotlin\\r\\n5:53 What is Kotlin?\\r\\n6:21 Features of Kotlin\\r\\n15:10 How to setup Kotlin?\\r\\n23:04 How to run a Kotlin program?\\r\\n25:23 Class &amp; Objects\\r\\n35:13 Data Types\\r\\n    35:33 Numbers\\r\\n    40:28 Characters\\r\\n    42:13 Boolean\\r\\n    44:18 Arrays\\r\\n46:28 Type Conversion\\r\\n48:17 Operators\\r\\n1:03:14 Kotlin I/O\\r\\n1:06:50 Comments in Kotlin\\r\\n1:10:45 Arrays &amp; Strings\\r\\n1:32:15 Control Flow Statements\\r\\n1:32:55 If Statement\\r\\n1:38:20 For Loop\\r\\n1:41:05 While Loop\\r\\n1:43:30 Do-While Loop\\r\\n1:46:25 When Case\\r\\n2:00:25 Jump Statements\\r\\n    2:00:30 Break\\r\\n    2:06:35 Continue \\r\\n    2:09:20 Return\\r\\n2:09:51 Functions\\r\\n2:32:54 Generic Functions\\r\\n2:36:09 Lambda Functions\\r\\n2:51:49 Data Classes\\r\\n3:02:04 Kotlin Annotations\\r\\n3:06:04 Collections\\r\\n    3:06:15 Lists\\r\\n    3:13:19 Sets\\r\\n    3:15:39 Maps\\r\\n3:22:04 Inheritance\\r\\n3:29:39 Range\\r\\n3:35:34 Regular Expression\\r\\n3:43:49 Null Safety\\r\\n3:49:59 Exception Handling\\r\\n3:56:09 Kotlin &amp; Java\\r\\n4:02:29 Kotlin vs Java\\r\\n4:06:44 Advantages of Kotlin\\r\\n4:07:39 Disadvantages of Kotlin\\r\\n\\r\\n-----------------------------------------------------------------\\r\\n\\r\\nSubscribe to our Edureka YouTube channel to get video updates everyday: http://bit.ly/2CUKdiI\\r\\n\\r\\nInstagram: https://www.instagram.com/edureka_learning\\r\\nFacebook: https://www.facebook.com/edurekaIN/\\r\\nTwitter: https://twitter.com/edurekain\\r\\nLinkedIn: https://www.linkedin.com/company/edureka\\r\\nTelegram: https://t.me/edurekaupdates\\r\\n\\r\\n#edureka #KotlinFullCourse #KotlinEdureka #KotlinTutorial #KotlinTutorialForBeginners #KotlinTraining \\r\\n\\r\\n-----------------------------------------------------------------\\r\\n\\r\\nFor Online Training and Certification, Please write back to us at sales@edureka.in or call us at IND: 9606058406 / US: 18338555775 (toll free) for more information.\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=OMxeOiPwAcQ\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431108\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/284\"\n        },\n        {\n            \"id\": 283,\n            \"video_title\": \"Kotlin Course - Tutorial for Beginners\",\n            \"video_desc\": \"Learn the Kotlin programming language in this introduction to Kotlin. Kotlin is a general purpose, open source, statically typed &ldquo;pragmatic&rdquo; programming language. It is used for many things, including Android development.\\r\\n\\r\\n🎥Course developed by Nate Ebel. Check out his YouTube channel: https://www.youtube.com/channel/UCVysWoMPvvHQMEJvRkslbAQ\\r\\n\\r\\n⭐️ Course Contents ⭐️\\r\\n⌨️ (0:00:50) Create Your First Kotlin Project\\r\\n⌨️ (0:04:23) Hello World\\r\\n⌨️ (0:06:33) Working With Variables\\r\\n⌨️ (0:11:04) Type System\\r\\n⌨️ (0:15:00) Basic Control Flow\\r\\n⌨️ (0:21:31) Basic Kotlin Functions\\r\\n⌨️ (0:27:12) Function Parameters\\r\\n⌨️ (0:32:52) Arrays\\r\\n⌨️ (0:35:28) Iterating with forEach\\r\\n⌨️ (0:41:17) Lists\\r\\n⌨️ (0:42:47) Maps\\r\\n⌨️ (0:45:05) Mutable vs Immutable Collections\\r\\n⌨️ (0:49:24) Vararg Parameters\\r\\n⌨️ (0:54:21) Named Arguments\\r\\n⌨️ (0:56:26) Default Parameter Values\\r\\n⌨️ (1:00:27) Create A Simple Class\\r\\n⌨️ (1:03:35) Adding Class Properties\\r\\n⌨️ (1:05:15) Class Init Block\\r\\n⌨️ (1:06:40) Accessing Class Properties\\r\\n⌨️ (1:07:32) Primary Constructor Properties\\r\\n⌨️ (1:08:17) Secondary Constructors\\r\\n⌨️ (1:09:50) Working With Multiple Init Blocks\\r\\n⌨️ (1:11:30) Default Property Values\\r\\n⌨️ (1:11:59) Properties With Custom Getters/Setters\\r\\n⌨️ (1:16:52) Class Methods\\r\\n⌨️ (1:20:12) Visibility Modifiers - Public/Private/Protected/Public\\r\\n⌨️ (1:22:30) Interfaces\\r\\n⌨️ (1:24:21) Abstract Classes\\r\\n⌨️ (1:26:13) Implementing An Interface\\r\\n⌨️ (1:26:35) Overriding Methods\\r\\n⌨️ (1:28:30) Default Interface Methods\\r\\n⌨️ (1:29:30) Interface Properties\\r\\n⌨️ (1:31:40) Implementing Multiple Interfaces\\r\\n⌨️ (1:32:57) Type Checking And Smart Casts\\r\\n⌨️ (1:36:18) Inheritance\\r\\n⌨️ (1:43:07) Object Expressions\\r\\n⌨️ (1:45:06) Companion Objects\\r\\n⌨️ (1:49:51) Object Declarations\\r\\n⌨️ (1:52:41) Enum Classes\\r\\n⌨️ (1:58:16) Sealed Classes\\r\\n⌨️ (2:00:07) Data Classes\\r\\n⌨️ (2:12:25) Extension Functions/Properties\\r\\n⌨️ (2:16:40) Higher-Order Functions\\r\\n⌨️ (2:29:07) Using The Kotlin Standard Library\\r\\n⌨️ (2:00:07) Data Classes\\r\\n\\r\\n--\\r\\n\\r\\nLearn to code for free and get a developer job: https://www.freecodecamp.org\\r\\n\\r\\nRead hundreds of articles on programming: https://medium.freecodecamp.org\\r\\n\\r\\nAnd subscribe for new videos on technology every day: https://youtube.com/subscription_center?add_user=freecodecamp\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=F9UC9DY-vIU\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431075\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/283\"\n        },\n        {\n            \"id\": 282,\n            \"video_title\": \"Kotlin Tutorial For Beginners [Full Course] Learn Kotlin For Android Development\",\n            \"video_desc\": \"Become an Android Developer TODAY:\\r\\nhttps://bit.ly/2JAHNXa\\r\\n\\r\\nTABLE OF CONTENTS\\r\\n00:00:37 - Intro to Kotlin\\r\\n00:04:28 - Installing Android Studio on macOS\\r\\n00:17:12 - Installing Android Studio on Windows\\r\\n00:27:21 - Installing Intellij for Kotlin on macOS\\r\\n00:36:00 - Installing Intellij for Kotlin on Windows\\r\\n00:44:35 - Kotlin Variables\\r\\n01:01:09 - Kotlin Strings\\r\\n01:23:03 - Kotlin Numbers &amp; Operators\\r\\n01:27:31 - Kotlin Functions\\r\\n01:44:33 - Kotlin Conditional Logic\\r\\n02:03:41 - Kotlin Collections\\r\\n02:23:04 - Kotlin Loops\\r\\n02:31:44 - Kotlin Nullability\\r\\n02:50:05 - Kotlin Classes &amp; Inheritance\\r\\n03:18:17 - Kotlin Lambda\\r\\n03:41:12 - Setting Up Android Emulator\\r\\n03:53:02 - Dinner Decider App Part 1\\r\\n04:14:24 - Dinner Decider App Part 2\\r\\n04:38:07 - Dinner Decider App Part 3\\r\\n04:49:01 - Installing to a Real Device from macOS\\r\\n04:55:42 - Installing to a Real Device from Windows\\r\\n\\r\\nKotlin Tutorial For Beginners - Learn Kotlin For Android Development\\r\\n\\r\\nIn this full Kotlin course you will learn the basics of the Kotlin programming language. After that you will build your very first Android app in Kotlin using Android Studio.\",\n            \"video_category\": 4,\n            \"video_link\": \"https://www.youtube.com/watch?v=SXLmr4Qp4OM\",\n            \"video_author\": \"youtube\",\n            \"upload_date\": \"1595431038\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"E-Learning\",\n                \"category_slug\": \"e-learning\"\n            },\n            \"formatted_date\": \"22 Jul 2020\",\n            \"link\": \"https://localhost/v1/video/282\"\n        }\n    ],\n    \"results_count\": 10,\n    \"next_page\": 2,\n    \"previous_page\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Frequently Asked Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/all-faq",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"all-faq"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Frequently Asked Questions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiurl}}/all-faq",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"all-faq"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 16 Oct 2020 09:04:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Fetch successful\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"question\": \"Who are you?\",\n            \"answer\": \"My name is Michael. That's all you need to know\",\n            \"date\": \"1602546051\",\n            \"formatted_date\": \"13 Oct 2020\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "All Agencies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiurl}}/all-agencies",
+							"host": [
+								"{{apiurl}}"
+							],
+							"path": [
+								"all-agencies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Agencies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiurl}}/all-agencies",
+									"host": [
+										"{{apiurl}}"
+									],
+									"path": [
+										"all-agencies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 03 Dec 2020 11:25:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.39 (Win64) OpenSSL/1.1.1c PHP/7.3.7"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.7"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Fetch successful\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"National Agency for Testing\",\n            \"email\": \"nat@gmail.com\",\n            \"password\": \"test\",\n            \"address\": \"20 NAT road\",\n            \"state\": \"Lagos\",\n            \"date\": \"1606994693\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "55ec5322-3705-4979-9177-44c6f9e6221d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0e356869-91d3-4188-9492-294e643b5d85",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "38016da6-b8cd-49fe-9bf2-f4b1bb70f405",
+			"key": "apiurl",
+			"value": "http://localhost/v1/api"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
